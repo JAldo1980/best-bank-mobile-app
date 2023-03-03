@@ -88,9 +88,11 @@ select {
 
 /* main configurations */
 /* MOBILE FIRST */
+body {
+  background-color: var(--background);
+}
 
 .wrapper {
-  background-color: var(--background);
   height: 100vh;
   font-family: "Poppins", sans-serif;
 }
@@ -103,6 +105,7 @@ header {
 
 .container {
   margin: 0 auto;
+  padding: 1em 0;
 }
 
 .best-bank-logo {
@@ -246,6 +249,14 @@ main {
   grid-template-columns: repeat(1, 1fr);
 }
 
+main h3 {
+  text-align: center;
+}
+
+.title-2 {
+  margin-top: 1em;
+}
+
 .left-container,
 .right-container {
   display: flex;
@@ -261,13 +272,16 @@ main {
   width: 300px;
   border: 2px solid var(--btn-border);
   border-radius: 10px;
-  padding: 0.5em;
+  padding: 1em 0.5em;
   font-weight: 600;
   transition: 0.4s;
   cursor: pointer;
 }
 
 .spending-outputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
   margin-top: 0.5em;
   width: 300px;
   background-color: var(--btn-fill);

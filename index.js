@@ -1,7 +1,5 @@
 import { accounts } from "./data.js";
-
 const mobileNavBtn = document.getElementById("mobile-nav-btn");
-const mobileNavModal = document.querySelector(".mobile-nav-modal");
 const overlay = document.querySelector(".overlay");
 const modalClose = document.getElementById("modal-close");
 const accountsHTML = document.getElementById("accounts");
@@ -17,27 +15,46 @@ modalClose.addEventListener("click", function () {
   overlay.classList.toggle("active");
 });
 
-// account HTML RENDER
-accountsHTML.innerHTML = `
-<h3>Accounts</h3>
-<div class="left-inner-box">
-  <div class="account-outputs" id="main-account-output">
-  <div>${accounts[0].title}</div>
-  <div>$ ${accounts[0].balance}</div>
-   
-  </div>
-  <div class="account-outputs" id="expenses-account-output"></div>
-  <div class="account-outputs" id="saving-account-output"></div>
-</div>
-`;
+// ACCOUNT HTML RENDER
+accounts.forEach(function (account) {
+  accountsHTML.innerHTML += `
+    <div class="left-inner-box">
+      <div class="account-outputs account-${account.id}" id=${account.id}>
+        <div class="account-output">${account.title}</div>
+        <div class="account-output">$ ${account.balance}</div>
+      </div>
+    </div>
+    `;
+});
 
-// SPENDING HTML RENDER
-spendingsHTML.innerHTML = `
-<h3>Spending</h3>
-<div class="right-inner-box">
-  <div class="spending-outputs" >
-  </div>
-  <div class="spending-outputs" ></div>
-  <div class="spending-outputs" ></div>
-</div>
-`;
+// identify individual account that is clicked
+document.querySelectorAll(".account-outputs").forEach(function (element) {
+  element.addEventListener("click", function (e) {
+    let targetId = e.target.id;
+    console.log(targetId);
+    if (targetId) {
+      // Retrieve the clicked account from the accounts array
+      let clickedAccount = accounts.find(function (account) {
+        return account.id === targetId;
+      });
+
+      // Check if a valid account was found?
+      if (clickedAccount) {
+        // Render the spending HTML for the clicked account
+        spendingsHTML.innerHTML = "";
+        clickedAccount.spendings.forEach(function (el) {
+          spendingsHTML.innerHTML += `
+              <div class="right-inner-box">
+                <div class="spending-outputs">
+                  <div class="spent-output">${el.category}</div>
+                  <div class="spent-output">$ ${el.spent}</div>
+                </div>
+              </div>
+            `;
+        });
+      } else {
+        console.error(`Account with ID ${targetId} not found`);
+      }
+    }
+  });
+});
