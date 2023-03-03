@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>best-bank</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        
+        <header>
+          <img class="best-bank-logo" src="/images/BestBank Logo.png" alt="" />
+        </header>
+        <!-- mobile nav btn -->
+        <div class="center-el">
+          <button id="mobile-nav-btn" class="mobile-nav-btn">      
+            Menu
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Payments</a></li>
+            <li><a href="#">Savings</a></li>
+            <li><a href="#">Financing</a></li>
+            <li><a href="#">Stocks</a></li>
+          </ul>
+        </nav>
+        <!-- mobile nav modal -->
+        <div class="overlay">
+          <div class="mobile-nav-modal">
+            <button id="modal-close" class="modal-close">X</button>
+            <div class="mobile-nav">
+              <ul>
+                <li><Home href="#">Home</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#">Savings</a></li>
+                <li><a href="#">Financing</a></li>
+                <li><a href="#">Stocks</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+          
+          <div class="btn-box">
+            <button class="core-btn" id="pay">Pay</button>
+            <button class="core-btn" id="transfer">Transfer</button>
+          </div>
+
+          <main>
+            <div class="left-container" id="accounts">
+              <!-- javascript render -->
+              <h3>Accounts</h3>
+              <div class="left-inner-box">
+                <div class="account-outputs" id="main-account-output">
+                </div>
+                <div class="account-outputs" id="expenses-account-output"></div>
+                <div class="account-outputs" id="saving-account-output"></div>
+              </div>
+              <!--  -->
+            </div>
+            <div class="right-container" id="spendings">
+              <!-- javascript render -->
+              <h3>Spending</h3>
+              <div class="right-inner-box">
+                <div class="spending-outputs" >
+                </div>
+                <div class="spending-outputs" ></div>
+                <div class="spending-outputs" ></div>
+              </div>
+              <!--  -->
+            </div>
+          </main>
+
+      </div>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,282 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* end of css reset */
+
+/* colors */
+
+:root {
+  --background: #f5f5f5;
+  --btn-border: #f9a725;
+  --btn-fill: #fcd18c;
+}
+
+/* font inport */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto&display=swap");
+
+/* main configurations */
+/* MOBILE FIRST */
+
+.wrapper {
+  background-color: var(--background);
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.best-bank-logo {
+  width: 50%;
+}
+
+.center-el {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+/* mobile navigation modal */
+
+.overlay {
+  display: none;
+}
+
+.mobile-nav-modal {
+  width: 350px;
+  background-color: white;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  background-color: ghostwhite;
+  color: red;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-close:active {
+  border: 1px solid red;
+  transition: 0.3s;
+}
+
+/* mobile navigation */
+
+.mobile-nav-btn {
+  border: 2px solid var(--btn-border);
+  border-radius: 20px;
+  padding: 0.5em 3em;
+  font-weight: 600;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.mobile-nav-btn:hover {
+  background-color: var(--btn-fill);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.mobile-nav ul li {
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-nav ul li:hover {
+  text-align: center;
+  background-color: #fcd18c;
+  width: 150px;
+}
+
+nav {
+  display: none;
+  margin-top: 1.5em;
+}
+
+.active {
+  display: block;
+}
+
+/* btn box */
+
+.btn-box {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.core-btn {
+  background-color: #fff;
+  width: 300px;
+  border: 2px solid var(--btn-border);
+  border-radius: 20px;
+  padding: 0.5em 3em;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.core-btn:hover {
+  background-color: var(--btn-fill);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+/* account outputs */
+
+main {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.left-container,
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-outputs {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+  width: 300px;
+  border: 2px solid var(--btn-border);
+  border-radius: 10px;
+  padding: 0.5em;
+  font-weight: 600;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.spending-outputs {
+  margin-top: 0.5em;
+  width: 300px;
+  background-color: var(--btn-fill);
+  border-radius: 20px;
+  padding: 0.5em 1em;
+}
+
+.account-outputs:hover {
+  background-color: var(--btn-fill);
+  transition: 0.4s;
+  cursor: pointer;
+}
