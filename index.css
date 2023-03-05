@@ -207,7 +207,6 @@ header {
 
 nav {
   display: none;
-  margin-top: 1.5em;
 }
 
 .active {
@@ -250,6 +249,8 @@ main {
 }
 
 main h3 {
+  margin-top: 1em;
+  padding-bottom: 0.5em;
   text-align: center;
 }
 
@@ -293,4 +294,80 @@ main h3 {
   background-color: var(--btn-fill);
   transition: 0.4s;
   cursor: pointer;
+}
+
+.spending-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spending-holder h3 {
+  color: var(--btn-fill);
+}
+
+/* tablet  */
+
+.best-bank-logo {
+  margin-bottom: 1em;
+  max-width: 250px;
+}
+
+/* desktop */
+@media (min-width: 1100px) {
+  main {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  main h3 {
+    margin-top: 1em;
+    text-align: left;
+  }
+  .mobile-nav-btn {
+    display: none;
+  }
+
+  .btn-box {
+    flex-direction: row;
+  }
+
+  .core-btn {
+    background-color: #fff;
+    width: 200px;
+    padding: 0.5em 1em;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btn-fill);
+  }
+
+  nav ul {
+    display: flex;
+    gap: 3em;
+    padding: 0;
+  }
+
+  nav ul li {
+    list-style: none;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.4s;
+  }
+
+  nav ul li:hover {
+    cursor: pointer;
+  }
+  nav ul li a:hover {
+    color: white;
+    transition: 0.4s;
+  }
 }
